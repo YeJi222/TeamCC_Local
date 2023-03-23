@@ -4,6 +4,7 @@ var qs = require('querystring');
 var db = require('./lib/db.js');
 var admin = require('./lib/admin.js');
 var user = require('./lib/user.js');
+var developer = require('./lib/developer.js');
 
 var session = require('express-session');
 var express = require('express');
@@ -22,21 +23,21 @@ app.use(session({
 
 // --------- developer ---------
 app.get('/teamcc/developer', function(request, response){
-   admin.developer(request, response);
+   developer.developer(request, response);
  })
 app.post('/teamcc/developer', function(request, response){
-   admin.developer(request, response);
+   developer.developer(request, response);
 })
 
 app.post('/teamcc/developer/login_action', function(request, response){
-   admin.developerLogin_action(request, response);
+   developer.developerLogin_action(request, response);
 })
 
 app.post('/teamcc/developer/admin_main', function(request, response){
-   admin.developer_main(request,response);
+   developer.developer_main(request,response);
 });
 app.get('/teamcc/developer/admin_main', function(request, response){
-   admin.developer_main(request,response);
+   developer.developer_main(request,response);
 });
 
 //-------------------------- admin.js  ------------------------------------
